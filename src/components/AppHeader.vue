@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div class="d-flex justify-content-between align-items-center">
-    <h1>BOOLFIX</h1>
+    <h1 class="mx-2">BOOLFIX</h1>
     <form action="#" @submit="$emit('search')">
       <input
         type="text"

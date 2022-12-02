@@ -21,18 +21,46 @@ export default {
 
 <template>
   <div>
-    <div class="img-div"></div>
-    <img :src="`https://image.tmdb.org/t/p/w500${info?.poster_path}`" alt="" />
-    <span>{{ info.name || info.title }}</span>
+    <div class="img-div">
+      <img
+        :src="`https://image.tmdb.org/t/p/w500${info?.poster_path}`"
+        alt=""
+      />
+      <div class="info-display">
+        <div class="d-flex flex-column justify-content-center">
+          <span> Titolo: {{ info.title || info.name }}</span>
+          <span
+            >Titolo originale:
+            {{ info.original_title || info.original_name }}</span
+          >
+          <span>Voto: {{ info.vote_average }}</span>
+          <span>Overview: {{ info.overview }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .img-div {
-  width: 18.75rem;
+  width: 15.625rem;
+  position: relative;
+}
+.info-display {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 15.625rem;
+  height: 100%;
+  background-color: black;
+  border: 1px solid gray;
+  color: white;
+  &:hover {
+    display: block;
+  }
 }
 img {
-  width: 18.75rem;
+  width: 15.625rem;
   height: auto;
 }
 </style>

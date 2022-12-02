@@ -15,14 +15,14 @@ export default {
 </script>
 
 <template>
-  <section class="mt-4 mx-3">
-    <h2>FILM</h2>
+  <section class="my-4 mx-3">
+    <h5>FILM</h5>
     <div class="d-flex">
       <AppFilmCard v-for="movie in store.movies" :info="movie" />
     </div>
   </section>
   <section class="mx-3">
-    <h2>SERIE TV</h2>
+    <h5>SERIE TV</h5>
     <div class="d-flex">
       <AppFilmCard v-for="serie in store.tv" :info="serie" />
     </div>
@@ -30,7 +30,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h2 {
+h5 {
   color: white;
 }
 </style>
