@@ -2,11 +2,13 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
 import { store } from "./store";
 import axios from "axios";
 export default {
   components: {
     AppHeader,
+    AppMain,
   },
   data() {
     return {
@@ -65,20 +67,8 @@ export default {
 </script>
 
 <template>
-  <div></div>
   <AppHeader @search="searchAll" />
-  <section>
-    <h2>FILM</h2>
-    <div v-for="movie in store.movies">
-      <h4>{{ movie.title }}</h4>
-    </div>
-  </section>
-  <section>
-    <h2>SERIE TV</h2>
-    <div v-for="serie in store.tv">
-      <h4>{{ serie.name }}</h4>
-    </div>
-  </section>
+  <AppMain />
 </template>
 
 <style lang="scss">
