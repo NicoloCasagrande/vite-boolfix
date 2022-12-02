@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       store,
+      error: false,
     };
   },
   methods: {
@@ -45,6 +46,12 @@ export default {
           this.store.movies = resp.data.results;
           console.log(resp.data.results);
           console.log("cerco Film");
+          if (this.error) {
+            this.error = !this.error;
+          }
+        })
+        .catch((err) => {
+          this.error = true;
         });
     },
     searchTv() {
